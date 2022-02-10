@@ -46,5 +46,12 @@ export const getMovieDetail = async (id) => {
   );
   return resp.data;
 };
+// Search movie by keyword
+export const getSearchMovies = async (query, type) => {
+  const resp = await axios.get(
+    `${apiUrl}/search/${type}?api_key=${apiKey}&query=${query}`,
+  );
+  return resp.data.results;
+};
 
 
